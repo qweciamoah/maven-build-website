@@ -21,8 +21,8 @@ pipeline{
             }
         }
         stage ("Build with Docker") {
-            steps{
-                sh "withDockerContainer(image: 'paulthece/maven-build-website .', toolName: 'docker ')"
+            steps {
+                sh "docker build -t maven-build-website ."
             }
         }
     }
